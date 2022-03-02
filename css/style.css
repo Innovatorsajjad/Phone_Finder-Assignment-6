@@ -19,3 +19,7 @@
     padding-bottom: 34px;
     text-align: center;
 }
+.transparentBackground{
+    background-color: rgba(241, 241, 241, 0.507);
+    border-radius: 10px;
+}

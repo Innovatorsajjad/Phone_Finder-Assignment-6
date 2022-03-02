@@ -1,6 +1,7 @@
 //variable diclaration.............
  const displayBoxData = document.getElementById("DisplayBoxOfData");
  const error = document.getElementById("error");
+ const Details=document.getElementById("details");
 
 // Connect search Button
 const searchButton =()=>{
@@ -44,12 +45,32 @@ const displayData = (info) =>{
                <h5 class="card-title">${phone.phone_name}</h5>
                <p class="card-text">${phone.brand}</p>
                <div class="buttons d-flex justify-content-around">
-               <a href="#" class="btn btn-success" onclick="Details('${phone.slug}')">Details</a>
+               <a href="#" class="btn text-light"  style="background-color: #F06843;" onclick="DisplayDetails('${phone.slug}')">Details</a>
           </div>
         </div>
         </div>`
         displayBoxData.appendChild(div);
     })
 };
+ // see more option.................
 
+const DisplayDetails=(id)=>{
+  const url=`https://openapi.programming-hero.com/api/phone/${id}`
+  fetch(url)
+  .then(response=>response.json())
+  .then(data =>DetailsData(data.data));
+}
+ const DetailsData =phoneDetails=>{
+   Details.innerHTML=`
+   <div class=" transparentBackground w-75 text-center mx-auto mb-5">
+   <div class="card-body">
+   <img src="${phoneDetails.image}" class="card-img-top w-25" alt="...">
+   <h3 class="card-title">Name: ${phoneDetails.phone_name}</h3>
+     <h5 class="card-title">Brand: ${phoneDetails.brand}</h5>
+     <p class="card-text"> ReleaseDate: ${phoneDetails.releaseDate}</p></p>
+     
+   </div>
+ </div>
+   `
 
+ }
