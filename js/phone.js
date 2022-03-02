@@ -68,7 +68,15 @@ const DisplayDetails=(id)=>{
    <img src="${phoneDetails.image}" class="card-img-top w-25" alt="...">
    <h3 class="card-title">Name: ${phoneDetails.name}</h3>
      <h5 class="card-title">Brand: ${phoneDetails.brand}</h5>
-     <p class="card-text"> ReleaseDate: ${phoneDetails.releaseDate ? phoneDetails.releaseDate:"not founded"}</p></p>
+     <h4 class="card-title">Chipset: ${phoneDetails.chipSet}</h4>
+     <h4 class="card-title">Sensor: ${phoneDetails.mainFeatures.sensors [0]}</h4>
+     <h4 class="card-title"> ${phoneDetails.mainFeatures.sensors[1]}</h4>
+     <h4 class="card-title"> ${phoneDetails.mainFeatures.sensors[2]}</h4>
+     <h4 class="card-title"> ${phoneDetails.mainFeatures.sensors[3]}</h4>
+     <h4 class="card-title">Memory: ${phoneDetails.mainFeatures.memory}</h4>
+     <h4 class="card-title">Display: ${phoneDetails.mainFeatures.displaySize}</h4>
+     <h4 class="card-title">USB: ${phoneDetails.others.USB}</h4>
+     <p class="card-text"> ReleaseDate: ${phoneDetails.releaseDate ? phoneDetails.releaseDate:"not founded"}</p>
      
    </div>
  </div>
