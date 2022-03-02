@@ -11,5 +11,11 @@
 
 .FontTexts{
     background-color: #F06843;
-    padding-bottom: 150px;
+    padding-bottom: 75px;
+}
+.error{
+    background-color:#F06843 ;
+    color: rgb(223, 0, 0);
+    padding-bottom: 34px;
+    text-align: center;
 }
