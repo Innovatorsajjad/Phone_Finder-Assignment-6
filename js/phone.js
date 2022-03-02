@@ -61,13 +61,14 @@ const DisplayDetails=(id)=>{
   .then(data =>DetailsData(data.data));
 }
  const DetailsData =phoneDetails=>{
+   console.log(phoneDetails)
    Details.innerHTML=`
    <div class=" transparentBackground w-75 text-center mx-auto mb-5">
    <div class="card-body">
    <img src="${phoneDetails.image}" class="card-img-top w-25" alt="...">
-   <h3 class="card-title">Name: ${phoneDetails.phone_name}</h3>
+   <h3 class="card-title">Name: ${phoneDetails.name}</h3>
      <h5 class="card-title">Brand: ${phoneDetails.brand}</h5>
-     <p class="card-text"> ReleaseDate: ${phoneDetails.releaseDate}</p></p>
+     <p class="card-text"> ReleaseDate: ${phoneDetails.releaseDate ? phoneDetails.releaseDate:"not founded"}</p></p>
      
    </div>
  </div>
