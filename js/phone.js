@@ -4,6 +4,7 @@
 
 // Connect search Button
 const searchButton =()=>{
+    displayBoxData.innerHTML=""
     const searchBox = document.getElementById("SearchBox");
     const searchBoxValue= searchBox.value ;
     if(searchBoxValue==""){
@@ -25,6 +26,12 @@ const searchButton =()=>{
 //display data ...........
 
 const displayData = (info) =>{
+    if(info.length <=0){
+        error.innerHTML=`
+        <h3> Not Found</h3>
+        `
+        return
+    }
     const firstTwenty = info.slice(0,20)
     
     firstTwenty.forEach(phone=>{
